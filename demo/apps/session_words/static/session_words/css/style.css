@@ -1,0 +1,23 @@
+#leftsec, #rightsec{
+	display: inline-block;
+	width: 450px;
+	padding: 20px;
+	margin: 10px auto;
+	vertical-align: top;
+}
+
+.red{
+	color: red;
+}
+
+.green{
+	color: green;
+}
+
+.blue{
+	color: blue;
+}
+
+.big{
+	font-size: 25px;
+}
