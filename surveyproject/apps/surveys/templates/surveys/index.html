@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Surveys</title>
+	{% load static %}
+	<link rel="stylesheet" href="{% static 'surveys/css/style.css' %}" media="screen" title="no title"  charset="utf-8">
+</head>
+<body>
+
+<div id="contentForm">
+	<form action="/surveys/process" method="POST">
+		{% csrf_token %}
+		Your Name: <input type="text" name="fname">
+		<br><br>
+		Dojo Locaction:
+		<select name="location">
+		  <option value="Los Angeles">Los Angeles</option>
+		  <option value="Garden Grove">Garden Grove</option>
+		  <option value="Mountain Views">Mountain Views</option>
+		  <option value="Seatle">Seatle</option>
+		</select>
+		<br><br>
+		Favorite Language:
+		<select name="language">
+		  <option value="Python">Python</option>
+		  <option value="Java">Java</option>
+		  <option value="HTML">HTML</option>
+		  <option value="JavaScript">JavaScript</option>
+		</select>
+		<br><br>
+		Comment (Optional):
+		<textarea name="comment"></textarea>
+		<br><br>
+		<input type="submit" name="submit" value="Submit">
+	</form>
+</div>
+
+</body>
+</html>

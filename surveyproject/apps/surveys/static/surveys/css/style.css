@@ -1,0 +1,15 @@
+#contentForm, #submitContent{
+	border: 2px solid black;
+	width: 500px;
+	padding: 20px;
+	margin: 10px auto
+}
+
+#thxtext{
+	border: 2px solid green;
+	width: 500px;
+	background-color:rgba(0, 193, 0, 0.5);
+	color: green;
+	padding: 20px;
+	margin: 10px auto
+}
