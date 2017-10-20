@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Random Word</title>
+	{% load static %}
+	<link rel="stylesheet" href="{% static 'random_word/css/style.css' %}" media="screen" title="no title"  charset="utf-8">
+</head>
+<body>
+<div id="header">Random word ( attempt # {{request.session.attmp}})</div>
+<div class="randomNum">{{randNum}}</div>
+<div class="gen">
+<a href="/random_word"><input id="genbut" type="submit" name="submit" value="Generate"></a>
+</div>
+</body>
+</html>
