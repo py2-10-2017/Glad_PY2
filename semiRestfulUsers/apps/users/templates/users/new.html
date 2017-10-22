@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Users New</title>
+	{% load static %}
+	<link rel="stylesheet" href="{% static 'users/css/style.css' %}" media="screen" title="no title"  charset="utf-8">
+</head>
+<body>
+	<h3>Add a new user</h3>
+	<form action='/users/create' method='POST'>
+		{% csrf_token %}
+		First Name: <br><br>
+		<input type="text" name="fname"><br><br>
+		Last Name: <br><br>
+		<input type="text" name="lname"><br><br>
+		Email: <br><br>
+		<input type="text" name="email"><br><br>
+		<br><br>
+		<input type="submit" name="submit" value="Create">
+	</form>
+	<br><br>
+	 {% if messages %}
+	     <ul>
+	       {% for message in messages %}
+	       <li>{{message}}</li>
+	       {% endfor %}
+	     </ul>
+     {% endif %}
+	<a href="/users">Go Back</a>
+</body>
+</html>

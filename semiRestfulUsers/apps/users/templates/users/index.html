@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Users</title>
+	{% load static %}
+	<link rel="stylesheet" href="{% static 'users/css/style.css' %}" media="screen" title="no title"  charset="utf-8">
+</head>
+<body>
+	<h3>Users</h3>
+	<table>
+		<thead>
+			<th>id</th>
+			<th>Full Name</th>
+			<th>Email</th>
+			<th>Create At</th>
+			<th>Action</th>
+		</thead>
+		<tbody>
+			{% for user in allusers%}
+			<tr>
+				<td>{{user.id}}</td>
+				<td><a href='/users/{{user.id}}'>{{user.first_name}} {{user.last_name}}</td>
+				<td>{{user.email}}</td>
+				<td>{{user.created_at}}</td>
+				<td>
+					<a href='/users/{{user.id}}'>Show</a>
+					<a href='/users/{{user.id}}/edit'>Edit</a>
+					<a href='/users/{{user.id}}/destroy'>Delete</a>
+				</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+	<br><br>
+	<a href="/users/new">Add a new user</a>
+
+</body>
+</html>
