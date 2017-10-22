@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Welcome</title>
+	{% load static %}
+	<link rel="stylesheet" href="{% static 'bookreview_app/css/style.css' %}" media="screen" title="no title" charset="utf-8">
+</head>
+<body>
+	<h1>Welcome! ! !</h1>
+	<div id='leftsec'>
+		<h2>Registration</h2>
+		<form action='/regis' method="POST">
+			{% csrf_token %}
+			First Name: <input type="text" name="fname"><br><br>
+			Last Name: <input type="text" name="lname"><br><br>
+			Email: <input type="text" name="email"><br><br>
+			Password: <input type="text" name="pwd"><br><br>
+			Password should be at least 8 characters.
+			<br><br>
+			Confirm Password: <input type="text" name="pwd2"><br><br>
+			<input type="submit" name="submit" value="Register">
+		</form>
+		<br><br><br><br>
+		{% if messages %}
+		     <ul>
+		       {% for message in messages %}
+		       <li>{{message}}</li>
+		       {% endfor %}
+		     </ul>
+	     {% endif %}
+    </div>
+    <div id='rightsec'>
+		<h2>Login</h2>
+		<form action='/login' method="POST">
+			{% csrf_token %}
+			Email: <input type="text" name="email"><br><br>
+			Password: <input type="text" name="pwd"><br><br>
+			<input type="submit" name="submit" value="Login">
+		</form>
+	</div>
+</body>
+</html>
